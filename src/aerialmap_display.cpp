@@ -47,10 +47,10 @@ namespace rviz
  * Splitting this transform lookup is necessary to mitigate frame jitter.
  */
 
-std::string const AerialMapDisplay::MAP_FRAME = "map";
-
 AerialMapDisplay::AerialMapDisplay() : Display()
 {
+  ros::param::param<std::string>("aerial_map_frame_id", MAP_FRAME, "map");
+  
   topic_property_ =
       new RosTopicProperty("Topic", "", QString::fromStdString(ros::message_traits::datatype<sensor_msgs::NavSatFix>()),
                            "sensor_msgs::NavSatFix topic to subscribe to.", this, SLOT(updateTopic()));

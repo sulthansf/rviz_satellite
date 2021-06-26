@@ -180,7 +180,7 @@ protected:
   /// translation of the center-tile w.r.t. the map frame
   Ogre::Vector3 t_centertile_map_{ Ogre::Vector3::ZERO };
   /// the map frame, rigidly attached to the world with ENU convention - see https://www.ros.org/reps/rep-0105.html#map
-  std::string static const MAP_FRAME;
+  std::string MAP_FRAME;
 
   /// buffer for tf lookups not related to fixed-frame
   std::shared_ptr<tf2_ros::Buffer const> tf_buffer_{ nullptr };
